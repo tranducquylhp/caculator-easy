@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .caculator{
+            position: relative;
+            width:220px;
+            height:250px;
+        }
+        .input{
+            text-align: right;
+            height: 30px;
+            width: 200px;
+        }
+        .nut{
+            color: blue;
+            width: 30px;
+            height: 30px;
+            margin: 11px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset class="caculator">
+            <fieldset class="input"> <p class="input" id="text" type="text"> </p> </fieldset>
+            <button id="1" type="button" class="nut" onclick="click1()"> 1 </button>
+            <button id= "2" type="button" class="nut" onclick="click2()"> 2 </button>
+            <button id="3" type="button" class="nut" onclick="click3()"> 3 </button>
+            <button id="cong" type="button" class="nut" onclick="clickcong()"> + </button>
+            <br/>
+            <button id="4" type="button" class="nut" onclick="click4()"> 4 </button>
+            <button id="5" type="button" class="nut" onclick="click5()"> 5 </button>
+            <button id="6" type="button" class="nut" onclick="click6()"> 6 </button>
+            <button id="tru" type="button" class="nut" onclick="clicktru()"> - </button>
+            <br/>
+            <button id="7" type="button" class="nut" onclick="click7()"> 7 </button>
+            <button id="8" type="button" class="nut" onclick="click8()"> 8 </button>
+            <button id="9" type="button" class="nut" onclick="click9()"> 9 </button>
+            <button id="nhan" type="button" class="nut" onclick="clicknhan()"> x </button>
+            <br/>
+            <button id="C" type="button" class="nut" onclick="clickC()"> C </button>
+            <button id="0" type="button" class="nut" onclick="click0()"> 0 </button>
+            <button id="ketqua" type="button" class="nut" onclick="clickbang()"> = </button>
+            <button id="chia" type="button" class="nut" onclick="clickchia()"> / </button>
+        </fieldset>
+    </form>
+    <script>
+        let s='';
+        let a=25;
+        function click1(){
+            s+="1";
+            if (s.length<a) document.getElementById("text").innerText=s;
+            else document.getElementById("text").innerText=s.slice(s.length-a,s.length);
+        }
+        function click2(){
+            s+="2";
+            if (s.length<a) document.getElementById("text").innerText=s;
+            else document.getElementById("text").innerText=s.slice(s.length-a,s.length);
+        }
+        function click3(){
+            s+="3";
+            if (s.length<a) document.getElementById("text").innerText=s;
+            else document.getElementById("text").innerText=s.slice(s.length-a,s.length);
+        }
+        function click4(){
+            s+="4";
+            if (s.length<a) document.getElementById("text").innerText=s;
+            else document.getElementById("text").innerText=s.slice(s.length-a,s.length);
+        }
+        function click5(){
+            s+="5";
+            if (s.length<a) document.getElementById("text").innerText=s;
+            else document.getElementById("text").innerText=s.slice(s.length-a,s.length);
+        }
+        function click6(){
+            s+="6";
+            if (s.length<a) document.getElementById("text").innerText=s;
+            else document.getElementById("text").innerText=s.slice(s.length-a,s.length);
+        }
+        function click7(){
+            s+="7";
+            if (s.length<a) document.getElementById("text").innerText=s;
+            else document.getElementById("text").innerText=s.slice(s.length-a,s.length);
+        }
+        function click8(){
+            s+="8";
+            if (s.length<a) document.getElementById("text").innerText=s;
+            else document.getElementById("text").innerText=s.slice(s.length-a,s.length);
+        }
+        function click9(){
+            s+="9";
+            if (s.length<a) document.getElementById("text").innerText=s;
+            else document.getElementById("text").innerText=s.slice(s.length-a,s.length);
+        }
+        function click0(){
+            s+="0";
+            if (s.length<a) document.getElementById("text").innerText=s;
+            else document.getElementById("text").innerText=s.slice(s.length-a,s.length);
+        }
+        function clickcong(){
+            if (s==="" || s[s.length-1]=="/" || s[s.length-1]=="-" || s[s.length-1]=="x") alert("Please press number");
+            else {
+                s += "+";
+                if (s.length < a) document.getElementById("text").innerText = s;
+                else document.getElementById("text").innerText = s.slice(s.length - a, s.length);
+            }
+        }
+        function clicktru(){
+            if (s==="" || s[s.length-1]=="+" || s[s.length-1]=="/" || s[s.length-1]=="x") alert("Please press number");
+            else {
+                s += "-";
+                if (s.length < a) document.getElementById("text").innerText = s;
+                else document.getElementById("text").innerText = s.slice(s.length - a, s.length);
+            }
+        }
+        function clicknhan(){
+            if (s==="" || s[s.length-1]=="+" || s[s.length-1]=="-" || s[s.length-1]=="/") alert("Please press number");
+            else {
+                s += "x";
+                if (s.length < a) document.getElementById("text").innerText = s;
+                else document.getElementById("text").innerText = s.slice(s.length - a, s.length);
+            }
+        }
+        function clickchia(){
+            if (s==="" || s[s.length-1]=="+" || s[s.length-1]=="-" || s[s.length-1]=="x") alert("Please press number");
+            else {
+                s += "/";
+                if (s.length < a) document.getElementById("text").innerText = s;
+                else document.getElementById("text").innerText = s.slice(s.length - a, s.length);
+            }
+        }
+        function clickC() {
+            s= "";
+            document.getElementById("text").innerText=s;
+        }
+        function clickbang(){
+            s+="="+tinhtoan();
+            if (s.length<a) document.getElementById("text").innerText=s;
+            else document.getElementById("text").innerText=s.slice(s.length-a,s.length);
+
+        }
+        function tinhtoan(){
+            let arr = new Array();
+            let dau = new Array();
+            let j=0;
+            for (let i=0; i<s.length; i++) {
+                arr[i]=0;
+                if (s[i]!=="+" && s[i]!=="-" && s[i]!=="x" && s[i]!== "/")
+                    switch (s[i]) {
+                        case "0": arr[j]=arr[j]*10; break;
+                        case "1": arr[j]=arr[j]*10+1; break;
+                        case "2": arr[j]=arr[j]*10+2; break;
+                        case "3": arr[j]=arr[j]*10+3; break;
+                        case "4": arr[j]=arr[j]*10+4; break;
+                        case "5": arr[j]=arr[j]*10+5; break;
+                        case "6": arr[j]=arr[j]*10+6; break;
+                        case "7": arr[j]=arr[j]*10+7; break;
+                        case "8": arr[j]=arr[j]*10+8; break;
+                        case "9": arr[j]=arr[j]*10+9; break;
+                    }
+                else {
+                    switch (s[i]) {
+                        case "+": dau[j]= "+"; break;
+                        case "-": dau[j]= "-"; break;
+                        case "x": dau[j]= "x"; break;
+                        case "/": dau[j]= "/"; break;
+                    }
+                    j++;
+                }
+            }
+            while (arr.length>1 && dau.length != 0){
+                let i=0;
+                while (i<dau.length){
+                    if (dau[i]=="x") {
+                        arr[i]*=arr[i+1];
+                        arr.splice(i+1,1);
+                        dau.splice(i,1);
+                    }
+                    if (dau[i]=="/") {
+                        arr[i]/=arr[i+1];
+                        arr.splice(i+1,1);
+                        dau.splice(i,1);
+                        if (dau.length==1) dau.splice(0,0);
+                    }
+                    i++;
+                }
+                for (let i=0;i<dau.length;i++){
+                    if (dau[i]=="+") {
+                        arr[i]+=arr[i+1];
+                        arr.splice(i+1,1);
+                        dau.slice(i,1);
+                    }
+                    if (dau[i]=="-") {
+                        arr[i]-=arr[i+1];
+                        arr.splice(i+1,1);
+                        dau.splice(i,1);
+                    }
+                }
+            }
+            return arr[0];
+
+        }
+    </script>
+</body>
+</html>
