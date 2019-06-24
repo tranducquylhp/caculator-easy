@@ -137,10 +137,11 @@
             document.getElementById("text").innerText=s;
         }
         function clickbang(){
+            let i=s.length;
             s+="="+tinhtoan();
             if (s.length<a) document.getElementById("text").innerText=s;
             else document.getElementById("text").innerText=s.slice(s.length-a,s.length);
-
+            s=s.slice(i+1,s.length);
         }
         function tinhtoan(){
             let arr = new Array();
@@ -179,13 +180,13 @@
                         arr.splice(i+1,1);
                         dau.splice(i,1);
                     }
-                    if (dau[i]=="/") {
+                    else if (dau[i]=="/") {
                         arr[i]/=arr[i+1];
                         arr.splice(i+1,1);
                         dau.splice(i,1);
                         if (dau.length==1) dau.splice(0,0);
                     }
-                    i++;
+                    else i++;
                 }
                 for (let i=0;i<dau.length;i++){
                     if (dau[i]=="+") {
