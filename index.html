@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .caculator{
+            position: relative;
+            width:220px;
+            height:250px;
+        }
+        .input{
+            text-align: right;
+            height: 30px;
+            width: 200px;
+        }
+        .nut{
+            color: blue;
+            width: 30px;
+            height: 30px;
+            margin: 11px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <fieldset class="caculator">
+        <fieldset class="input"> <p class="input" id="text" type="text"> </p> </fieldset>
+        <button id="1" type="button" class="nut" value="1" onclick="clickNum(this.value)"> 1 </button>
+        <button id= "2" type="button" class="nut" value="2" onclick="clickNum(this.value)"> 2 </button>
+        <button id="3" type="button" class="nut"  value="3" onclick="clickNum(this.value)"> 3 </button>
+        <button id="cong" type="button" class="nut" value="+" onclick="clickNum(this.value)"> + </button>
+        <br/>
+        <button id="4" type="button" class="nut" onclick="clickNum(this.value)" value="4"> 4 </button>
+        <button id="5" type="button" class="nut" onclick="clickNum(this.value)" value="5"> 5 </button>
+        <button id="6" type="button" class="nut" onclick="clickNum(this.value)" value="6"> 6 </button>
+        <button id="tru" type="button" class="nut" onclick="clickNum(this.value)" value="-"> - </button>
+        <br/>
+        <button id="7" type="button" class="nut" onclick="clickNum(this.value)" value="7"> 7 </button>
+        <button id="8" type="button" class="nut" onclick="clickNum(this.value)" value="8"> 8 </button>
+        <button id="9" type="button" class="nut" onclick="clickNum(this.value)" value="9"> 9 </button>
+        <button id="nhan" type="button" class="nut" onclick="clickNum(this.value)" value="x"> x </button>
+        <br/>
+        <button id="C" type="button" class="nut" onclick="clickNum(this.value)" value="C"> C </button>
+        <button id="0" type="button" class="nut" onclick="clickNum(this.value)" value="0"> 0 </button>
+        <button id="ketqua" type="button" class="nut" onclick="clickNum(this.value)" value="="> = </button>
+        <button id="chia" type="button" class="nut" onclick="clickNum(this.value)" value="/"> / </button>
+    </fieldset>
+</form>
+<script>
+    let s='';
+    let a=25;
+    function clickNum(number){
+        switch (number) {
+            case "0":
+                s+="0"; break;
+            case "1": s+="1"; break;
+            case "2": s+="2"; break;
+            case "3": s+="3"; break;
+            case "4": s+="4"; break;
+            case "5": s+="5"; break;
+            case "6": s+="6"; break;
+            case "7": s+="7"; break;
+            case "8": s+="8"; break;
+            case "9": s+="9"; break;
+            case "+": s+="+"; break;
+            case "-": s+="-"; break;
+            case "x": s+="*"; break;
+            case "/": s+="/"; break;
+            case "=":
+                var b= eval(s);
+                s+="="+b;
+                break;
+            case "C": s=""; break;
+        }
+        if (s.length<a) document.getElementById("text").innerText=s;
+        else document.getElementById("text").innerText=s.slice(s.length-a,s.length);
+        if (number=="=") s=b;
+    }
+</script>
+</body>
+</html>
